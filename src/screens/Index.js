@@ -10,7 +10,7 @@ const HomeScreen = () => {
 
   const logout = async () => {
     await signOut(auth).then(()=>{
-      navigation.goBack("LoginScreen")
+      navigation.replace("LoginScreen")
     }).catch(e => alert(e.message));    
   };
 

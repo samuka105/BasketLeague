@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import { auth } from '../../Firebase'
-import { createUserWithEmailAndPassword , onAuthStateChanged , signInWithEmailAndPassword , signOut} from 'firebase/auth'
+import { createUserWithEmailAndPassword , onAuthStateChanged , signInWithEmailAndPassword } from 'firebase/auth'
 import Logo from '../Imagens/Logo.png'
 import { useNavigation } from '@react-navigation/native'
 
@@ -16,7 +16,7 @@ const LoginScreen = () => {
     useEffect(() =>{
         const unsubscribe  = auth.onAuthStateChanged(user=>{
             if(user){
-                navigation.navigate("Index")
+                navigation.replace("Index")
             }
         })
         return unsubscribe
@@ -27,11 +27,12 @@ const LoginScreen = () => {
     });
 
     const registra = async ()=>{
-        try{
+        navigation.navigate("SignInScreen")
+        /*try{
             const user = await createUserWithEmailAndPassword(auth,email,senha);
         }catch(error){
             console.log(error.message)
-        }
+        }*/
     }
 
     const login = async ()=>{
@@ -41,15 +42,11 @@ const LoginScreen = () => {
             console.log(error.message)
         }
     }
-/*
-    const logout = async () => {
-        await signOut(auth);
-      };
-*/
+
     return(
         <KeyboardAvoidingView
             style={styles.container}
-            behavior="padding"
+            behavior="paddingBottom: 20,"
         >
             <Image source={Logo} style={styles.image} />
             <View style={styles.inputContainer}>
