@@ -28,11 +28,6 @@ const LoginScreen = () => {
 
     const registra = async ()=>{
         navigation.navigate("SignInScreen")
-        /*try{
-            const user = await createUserWithEmailAndPassword(auth,email,senha);
-        }catch(error){
-            console.log(error.message)
-        }*/
     }
 
     const login = async ()=>{
@@ -133,10 +128,11 @@ const styles = StyleSheet.create({
     },
     image:{
         flex : 1,
-        maxHeight: 75,
-        maxWidth : 75,
+        maxHeight: 200,
+        maxWidth : 200,
         resizeMode:'contain',
         padding: 50,
-        marginBottom: 50,
+        marginBottom: 'auto',
+        marginTop:'auto',
     }
 })

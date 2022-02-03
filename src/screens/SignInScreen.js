@@ -2,23 +2,28 @@ import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../Firebase';
+import { useNavigation } from '@react-navigation/native';
 
 const SignInScreen = () => {
 
     const [emailSignIn, setEmailSignIn] = useState('')
     const [senhaSignIn, setSenhaSignIn] = useState('')
     const [senhaRepitidaSignIn, setRepitidaSenhaSignIn] = useState('')
+    
+    const navigation= useNavigation()
 
 
     const registra = async () => {
-        if(senhaSignIn == setRepitidaSenhaSignIn){
+        if(senhaSignIn == senhaRepitidaSignIn){
             try {
                 const user = await createUserWithEmailAndPassword(auth, emailSignIn, senhaSignIn);
             } catch (error) {
                 console.log(error.message)
             }
+            //navigation.navigate("AccountConfig")
+            navigation.replace("Index")
         }else{
-            //Adicionar toast ou alerta
+            console.log("senha errada");
         }
     }
     
