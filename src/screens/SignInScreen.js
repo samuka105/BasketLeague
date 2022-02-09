@@ -20,8 +20,8 @@ const SignInScreen = () => {
             } catch (error) {
                 console.log(error.message)
             }
-            //navigation.navigate("AccountConfig")
-            navigation.replace("Index")
+            navigation.replace("AccountConfig")
+            //navigation.replace("Index")
         }else{
             console.log("senha errada");
         }

@@ -13,11 +13,11 @@ const HomeScreen = () => {
       navigation.replace("LoginScreen")
     }).catch(e => alert(e.message));    
   };
-/*
+
   const logout1 = async () => {
       navigation.replace("AccountConfig")    
   };
-*/
+
   return (
     <View style={styles.container}>
       <Text>Email: {auth.currentUser?.email}</Text>
@@ -27,12 +27,12 @@ const HomeScreen = () => {
       >
         <Text style={styles.buttonText}>Sair </Text>
       </TouchableOpacity>
-      {/*<TouchableOpacity
+      <TouchableOpacity
         onPress={logout1}
         style={styles.button}
       >
         <Text style={styles.buttonText}>teste </Text>
-      </TouchableOpacity>*/}
+      </TouchableOpacity>
     </View>
   )
 }
