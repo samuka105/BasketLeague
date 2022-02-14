@@ -4,6 +4,7 @@ na pasta /api:
     
     npm install
 para rodar:
+
     node index.js
 ### Exemplos de chamada pelo browser:
 localhost:3000/player?name=Stephen Curry
