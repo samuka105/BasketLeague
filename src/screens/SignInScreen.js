@@ -9,14 +9,14 @@ const SignInScreen = () => {
     const [emailSignIn, setEmailSignIn] = useState('')
     const [senhaSignIn, setSenhaSignIn] = useState('')
     const [senhaRepitidaSignIn, setRepitidaSenhaSignIn] = useState('')
-    
+
     const navigation= useNavigation()
 
 
     const registra = async () => {
         if(senhaSignIn == senhaRepitidaSignIn){
             try {
-                const user = await createUserWithEmailAndPassword(auth, emailSignIn, senhaSignIn);
+                //const user = await createUserWithEmailAndPassword(auth, emailSignIn, senhaSignIn);
             } catch (error) {
                 console.log(error.message)
             }
@@ -26,7 +26,7 @@ const SignInScreen = () => {
             console.log("senha errada");
         }
     }
-    
+
 
     return (
         <KeyboardAvoidingView

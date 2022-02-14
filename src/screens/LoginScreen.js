@@ -32,7 +32,9 @@ const LoginScreen = () => {
 
     const login = async ()=>{
         try{
-            const user = await signInWithEmailAndPassword(auth,email,senha);
+            //const user = await signInWithEmailAndPassword(auth,email,senha);
+            navigation.navigate("Index")
+
         }catch(error){
             console.log(error.message)
         }
