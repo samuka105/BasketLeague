@@ -14,10 +14,10 @@ export default () => {
     <>
       <TabView value={index} onChange={setIndex} animationType="spring">
         <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
-          <Text h1>Index lalala</Text>
+          <Text h1>Index... </Text>
         </TabView.Item>
         <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
-          <Text h1>Meu time e n sei oque</Text>
+          <Text h1>Meu time...</Text>
         </TabView.Item>
         <TabView.Item style={{ width: '100%' }}>
           <ProfileScreen />
@@ -52,45 +52,8 @@ export default () => {
     </>
   );
 };
-/**
-const HomeScreen = () => {
-  const navigation = useNavigation()
 
-
-  const logout = async () => {
-    await signOut(auth).then(()=>{
-      navigation.replace("profile")
-    }).catch(e => alert(e.message));
-  };
 /*
-  const logout1 = async () => {
-      navigation.replace("AccountConfig")
-  };
-  return (
-    <View style={styles.container}>
-      <Text>Email: {auth.currentUser?.email}</Text>
-
-
-
-      <Button title="Hello World!" />;
-      <TouchableOpacity
-        onPress={logout}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Sair </Text>
-      </TouchableOpacity>
-      {/*<TouchableOpacity
-        onPress={logout1}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>teste </Text>
-      </TouchableOpacity>}
-    </View>
-  )
-}
-
-export default HomeScreen
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
