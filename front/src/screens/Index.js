@@ -4,6 +4,8 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { auth } from '../../Firebase'
 import { signOut } from 'firebase/auth'
 import ProfileScreen from  './profile2';
+import Leaderboard from './Leaderboard';
+//import PlayerMarket from './playerMarket';
 
 import { Tab, Text, TabView } from 'react-native-elements';
 
@@ -13,17 +15,21 @@ export default () => {
   return (
     <>
       <TabView value={index} onChange={setIndex} animationType="spring">
-        <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
-          <Text h1>Index... </Text>
+        <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
+          <div />
         </TabView.Item>
-        <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
+        <TabView.Item style={{ backgroundColor: 'white', width: '100%' }}>
           <Text h1>Meu time...</Text>
         </TabView.Item>
         <TabView.Item style={{ width: '100%' }}>
-          <ProfileScreen />
+          <ProfileScreen options = {{headerRight: () => (
+            <Button onPress={() => alert('This is a button!')} title="Info">TEST </Button>
+              )
+          }}/>
         </TabView.Item>
       </TabView>
       <Tab
+        style={{backgroundColor: '#FEAB30'}}
         value={index}
         onChange={(e) => setIndex(e)}
         indicatorStyle={{

@@ -1,9 +1,11 @@
 // Importing express module
 const express = require("express")
 const app = express()
+const cors = require('cors')
 
 const NBA = require("nba");
 // Handling GET / request
+app.use(cors());
 app.get("/", (req, res, next) => {
     res.send("This is the express server")
 })
@@ -42,6 +44,6 @@ app.get("/player", async (req, res) => {
 })
 
 // Server setup
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Server is Running")
 })
